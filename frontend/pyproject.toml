@@ -7,7 +7,11 @@ authors = [
     { name = "Samuel Ayodele", email = "125303495+sammyt42021@users.noreply.github.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "httpx>=0.28.1",
+    "pandas>=3.0.6",
+    "streamlit>=1.64.0",
+]
 
 [project.scripts]
 frontend = "frontend:main"
