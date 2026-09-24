@@ -1,0 +1,22 @@
+services:
+  backend:
+    container_name: eclipsebord-backend
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: dockerfiles/backend.dockerfile
+    ports:
+      - "8000:8000"
+
+  frontend:
+    container_name: eclipsebord-frontend
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: dockerfiles/frontend.dockerfile
+    ports:
+      - "8501:8501"
+    environment:
+      BACKEND_URL: http://backend:8000
+    depends_on:
+      - backend
